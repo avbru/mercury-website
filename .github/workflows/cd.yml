@@ -22,7 +22,8 @@ jobs:
 
       - name: Build
         run: |
-          /usr/bin/git pull --recurse-submodules
+          git submodule add --force https://github.com/google/docsy.git themes/docsy
+          git submodule update --init --recursive
           hugo --minify
           ls ./public -l
 
