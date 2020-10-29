@@ -28,7 +28,16 @@ jobs:
           git submodule add --force https://github.com/google/docsy.git themes/docsy
           git submodule update --init --recursive                    
           hugo --minify
-          ls ./public -l
+          ls public -l
+      - name: Deploy to Server
+          uses: easingthemes/ssh-deploy@v2.1.5
+          env:
+            SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+            ARGS: "-rltgoDzvO --delete"
+            SOURCE: "./public/"
+            REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+            REMOTE_USER: ${{ secrets.REMOTE_USER }}
+            TARGET: ${{ secrets.REMOTE_TARGET }}
 
 #      - name: Copy file via ssh password
 #          uses: appleboy/scp-action@master
