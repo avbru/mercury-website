@@ -14,11 +14,6 @@ jobs:
           submodules: recursive  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
-      - name: Checkout submodules
-        uses: srt32/git-actions@v0.0.3
-        with:
-          args: git submodule update --init --recursive
-
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
@@ -27,6 +22,7 @@ jobs:
 
       - name: Build
         run: |
+          /usr/bin/git pull --recurse-submodules
           hugo --minify
           ls ./public -l
 
