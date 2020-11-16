@@ -27,7 +27,7 @@ jobs:
           npm i -D autoprefixer
           git submodule add --force https://github.com/google/docsy.git themes/docsy
           git submodule update --init --recursive                    
-          hugo --minify
+          env HUGO_ENV="production" hugo --minify
       - name: Deploy to web server
         uses: easingthemes/ssh-deploy@v2.1.5
         env:
