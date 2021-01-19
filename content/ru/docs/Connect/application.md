@@ -21,11 +21,11 @@ description: >
   <input type="text" id="ogrn" size="30"><br>
   
   <label>Должность руководителя организации:</label><br>
-  <input type="text" id="ceo_position" size="30"><br>
+  <input type="text" id="ceo_position" size="30" placeholder="в именительном падеже"><br>
   <input type="text" id="ceo_position_r" size="30" placeholder="в родительном падеже"><br>
   <label>ФИО руководителя организации:</label><br>
-  <input type="text" id="ceo_fio" size="100"><br>
-  <input type="text" id="ceo_fio_r" size="100"><br>
+  <input type="text" id="ceo_fio" size="100" placeholder="в именительном падеже"><br>
+  <input type="text" id="ceo_fio_r" size="100" placeholder="в родительном падеже"><br>
   
   <label><strong>Данные ответственного лица:</strong></label><br>
   <label for="fio">Должность: &nbsp</label> <input type="text" id="position" size="30"><br>
